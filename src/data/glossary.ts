@@ -231,4 +231,60 @@ export const GLOSSARY: GlossaryEntry[] = [
     definition:
       "The simplified electrical drawing that shows sources, transformers, breakers, and paths as single lines. It is the map of how a megawatt becomes a GPU’s power supply.",
   },
+  {
+    id: "firm-power",
+    term: "Firm power",
+    group: "Power",
+    definition:
+      "Electricity that is there on demand, not only when the wind or the sun is. AI clusters are a flat load. They ask for firm power at 3 a.m. and at 3 p.m., which is why a surplus hour of renewables does not by itself unlock a hall.",
+  },
+  {
+    id: "interconnection",
+    term: "Interconnection queue",
+    group: "Power",
+    definition:
+      "The line of generation and large loads waiting on a utility study before they can connect. A data hall can be built in a year or two. A place in this queue, and the transmission to serve it, often takes longer — or does not come.",
+  },
+  {
+    id: "minimum-take",
+    term: "Minimum take",
+    group: "Power",
+    definition:
+      "A contract that makes a large customer pay for most of the power it reserved, whether or not the racks are full. Utilities propose it because a substation outlives a server generation, and they do not want to strand the asset if the tenant’s plan shrinks.",
+  },
+  {
+    id: "tier",
+    term: "Tier I–IV",
+    group: "Reliability",
+    definition:
+      "The Uptime Institute’s availability grades. Higher tiers add electrical paths, UPS redundancy, generator coverage, and fuel. Most large U.S. halls sit between III and IV. A quoted 99.995% for Tier IV is a design target; operations spend it. “Tier V” is not an Institute tier.",
+  },
+  {
+    id: "rack-unit",
+    term: "Rack unit (U)",
+    group: "Compute",
+    definition:
+      "A vertical slice of a cabinet, 1.75 inches. Common cabinets are 42U or 48U. AI trays do not always fill that grid the way 1U enterprise servers did. Power and coolant, not the U count, are what now size the rack.",
+  },
+  {
+    id: "cfm",
+    term: "CFM per kilowatt",
+    group: "Cooling",
+    definition:
+      "Cubic feet of air per minute, per kilowatt of heat. A rough minimum often quoted is about 120. At 100 MW that is on the order of 12 million cubic feet a minute — why ducts and towers dwarf the racks, and why air runs out of room above a few tens of kilowatts.",
+  },
+  {
+    id: "cold-battery",
+    term: "Cold battery",
+    group: "Cooling",
+    definition:
+      "A large tank of water chilled when power is cheaper, often overnight, and used to carry cooling load later. Published site tours have shown tanks on the order of a million gallons. It shifts when the chillers run. It does not shrink the heat.",
+  },
+  {
+    id: "hot-aisle",
+    term: "Hot aisle / cold aisle",
+    group: "Cooling",
+    definition:
+      "Racks faced so that intakes share a cold aisle and exhausts share a hot aisle. Containment keeps the two from mixing. It was one of the ordinary moves that pulled surveyed PUE down from roughly 2.5 in the late 2000s toward a little above 1.5.",
+  },
 ];

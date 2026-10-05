@@ -1,8 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Anatomy of AI Infrastructure">
-  <rect width="32" height="32" rx="6" fill="#0C0E12"/>
-  <path fill="#E8E4DC" d="M6 5.5h8L12.7 10c-1.35 2.2-1.35 4.4.15 6.6L15 27H5l2.15-10.4c1.5-2.2 1.5-4.4.15-6.6L6 5.5z"/>
-  <rect x="17" y="13" width="11" height="14" rx="1.2" fill="#A855F7"/>
-  <rect x="18.5" y="18.2" width="8" height="2" fill="#22D3EE"/>
-  <rect x="18.5" y="22.4" width="8" height="2" fill="#38BDF8"/>
-  <circle cx="22.5" cy="8.2" r="2.15" fill="#E8A317"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Cold Aisle">
+  <rect width="32" height="32" rx="7" fill="#0c0e12"/>
+  <rect x="3" y="3.5" width="26" height="5.5" rx="1.2" fill="#e8a317"/>
+  <rect x="4" y="12" width="7" height="16" rx="1.6" fill="#7ec8c3"/>
+  <rect x="21" y="12" width="7" height="16" rx="1.6" fill="#7ec8c3"/>
 </svg>

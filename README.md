@@ -7,7 +7,7 @@ An educational, explorable model of how electricity, water, cooling, fiber, buil
 - Orbit the campus. Click a system. Shift-click to compare up to three. Double-click a rack to open a representative cabinet.
 - Switch eras: pre-cloud room, cloud hall, hyperscale AI campus, neocloud pods.
 - Follow power, water, data, or heat. Scrub a build sequence. Start the eight-step tour.
-- Open the supply globe, the timeline, the metrics lab, the glossary, and the text atlas (no WebGL required).
+- Open the supply globe, the timeline, the power page (why megawatts gate the build), the metrics lab, the glossary, and the text atlas (no WebGL required).
 - Search with the search button or Ctrl/Cmd+K. Layer shortcuts on the explore page: P power, B backup, C cooling, W water, N network, G compute, U building, S supply, E capital, O carbon, T construction, Y telemetry.
 
 ## Stack

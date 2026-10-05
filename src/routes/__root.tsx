@@ -4,7 +4,7 @@ import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { AppChrome } from "@/components/ui/chrome";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "Anatomy of AI Infrastructure";
+const APP_NAME = "Cold Aisle";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -15,7 +15,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "An interactive educational model of AI data-center infrastructure, from pre-cloud rooms to hyperscale campuses and neocloud factories.",
+          "Fly through a liquid-cooled AI training pod. Follow the power, the water, and the data, open a rack, and scale it toward a gigawatt.",
       },
       { name: "theme-color", content: "#0c0e12" },
     ],

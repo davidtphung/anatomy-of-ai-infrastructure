@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AtlasRouteImport } from './routes/atlas'
+import { Route as BuildRouteImport } from './routes/build'
 import { Route as CompareRouteImport } from './routes/compare'
 import { Route as ExploreRouteImport } from './routes/explore'
 import { Route as GlossaryRouteImport } from './routes/glossary'
@@ -27,6 +28,11 @@ const IndexRoute = IndexRouteImport.update({
 const AtlasRoute = AtlasRouteImport.update({
   id: '/atlas',
   path: '/atlas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BuildRoute = BuildRouteImport.update({
+  id: '/build',
+  path: '/build',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CompareRoute = CompareRouteImport.update({
@@ -68,6 +74,7 @@ const TimelineRoute = TimelineRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/atlas': typeof AtlasRoute
+  '/build': typeof BuildRoute
   '/compare': typeof CompareRoute
   '/explore': typeof ExploreRoute
   '/glossary': typeof GlossaryRoute
@@ -79,6 +86,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/atlas': typeof AtlasRoute
+  '/build': typeof BuildRoute
   '/compare': typeof CompareRoute
   '/explore': typeof ExploreRoute
   '/glossary': typeof GlossaryRoute
@@ -91,6 +99,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/atlas': typeof AtlasRoute
+  '/build': typeof BuildRoute
   '/compare': typeof CompareRoute
   '/explore': typeof ExploreRoute
   '/glossary': typeof GlossaryRoute
@@ -104,6 +113,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/atlas'
+    | '/build'
     | '/compare'
     | '/explore'
     | '/glossary'
@@ -115,6 +125,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/atlas'
+    | '/build'
     | '/compare'
     | '/explore'
     | '/glossary'
@@ -126,6 +137,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/atlas'
+    | '/build'
     | '/compare'
     | '/explore'
     | '/glossary'
@@ -138,6 +150,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AtlasRoute: typeof AtlasRoute
+  BuildRoute: typeof BuildRoute
   CompareRoute: typeof CompareRoute
   ExploreRoute: typeof ExploreRoute
   GlossaryRoute: typeof GlossaryRoute
@@ -161,6 +174,13 @@ declare module '@tanstack/react-router' {
       path: '/atlas'
       fullPath: '/atlas'
       preLoaderRoute: typeof AtlasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/build': {
+      id: '/build'
+      path: '/build'
+      fullPath: '/build'
+      preLoaderRoute: typeof BuildRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/compare': {
@@ -218,6 +238,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AtlasRoute: AtlasRoute,
+  BuildRoute: BuildRoute,
   CompareRoute: CompareRoute,
   ExploreRoute: ExploreRoute,
   GlossaryRoute: GlossaryRoute,

@@ -55,8 +55,8 @@ export const MILESTONES: Milestone[] = [
     year: "2010s",
     title: "Hyperscale standardization",
     era: "cloud",
-    text: "Operators cloned halls, busways, and containment. PUE became a number executives repeated. Designs assumed air, commodity servers, and steady growth.",
-    bottleneck: "Land, substations, and the long life of a building versus a server.",
+    text: "Operators cloned halls, busways, and containment. Surveyed PUE for large sites fell from roughly 2.5 around 2007 toward a little above 1.5, and the best fleets reported near 1.1. U.S. data-center electricity, which had doubled from 2000 to 2007, then stayed roughly flat while traffic soared.",
+    bottleneck: "The easy non-IT overhead. Once it is near 10%, the next watt is a grid problem.",
   },
   {
     id: "containers",
@@ -83,11 +83,19 @@ export const MILESTONES: Milestone[] = [
     bottleneck: "Megawatts, transformers, and fabric latency.",
   },
   {
+    id: "power-gate",
+    year: "2022–",
+    title: "Power becomes the site",
+    era: "hyperscale",
+    text: "Halls on the order of 100 MW, and campuses discussed toward a gigawatt, ran into firm power, transmission, and interconnection queues. A building is often a one-to-two-year job. The energy to feed it is often three years, or not available. Siting followed the substations.",
+    bottleneck: "Firm megawatts and permission, not floor tile.",
+  },
+  {
     id: "liquid",
     year: "2023–",
     title: "Liquid cooling at scale",
     era: "hyperscale",
-    text: "Direct-to-chip loops, coolant distribution, and new rack specifications spread because air handlers could not politely remove the heat of the newest AI racks.",
+    text: "Air is generally comfortable around 20–30 kW a rack, and maybe 50 kW with a rear-door exchanger. Published AI racks moved past 40 kW and toward about 120 kW. Direct-to-chip loops spread because the alternative was a room that was mostly duct.",
     bottleneck: "Plumbing skill, leak tolerance, and facility water strategy.",
   },
   {
@@ -111,7 +119,7 @@ export const BUILD_PHASES: { id: number; name: string; detail: string; critical:
     id: 1,
     name: "Grid interconnection",
     detail: "Studies, agreements, and a place in the utility’s queue. Timing varies by region, voltage, and how loaded the local grid already is.",
-    critical: "Interconnection can outlast the building. Treat any universal month-count as fiction.",
+    critical: "Interconnection can outlast the building. Operators describe halls in one to two years and firm energy in three years — or not at all. Treat any universal month-count as fiction.",
   },
   {
     id: 2,

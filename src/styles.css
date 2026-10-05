@@ -13,6 +13,9 @@
   --color-faint: #7a746a;
   --color-amber: #e8a317;
   --color-amber-ink: #1c1406;
+  --color-water: #7ec8c3;
+  --color-heat: #e24b3a;
+  --color-copper: #e7c4a2;
   --radius-sm: 0.375rem;
   --radius-md: 0.75rem;
   --radius-lg: 1.15rem;
@@ -57,6 +60,11 @@
   ::selection {
     background: var(--color-amber);
     color: var(--color-amber-ink);
+  }
+
+  a.text-link {
+    color: var(--color-amber);
+    text-underline-offset: 0.18em;
   }
 }
 
@@ -805,5 +813,298 @@
 
   .metric-grid.wide {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.fly-root {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  touch-action: none;
+  overflow: hidden;
+}
+
+.fly-stage,
+.fly-canvas,
+.fly-stage canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.fly-fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--color-muted);
+}
+
+.fly-vignette {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 45%, color-mix(in srgb, var(--color-bg) 72%, transparent) 100%);
+}
+
+.fly-cross {
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  width: 0.55rem;
+  height: 0.55rem;
+  transform: translate(-50%, -50%);
+  border: 1px solid color-mix(in srgb, var(--color-fg) 55%, transparent);
+  border-radius: 999px;
+}
+
+.fly-top,
+.fly-caption,
+.fly-alarm,
+.fly-campus,
+.fly-dock,
+.fly-notes,
+.fly-stick,
+.fly-rise {
+  position: absolute;
+  z-index: 2;
+}
+
+.fly-top {
+  top: 0.75rem;
+  left: 0.75rem;
+  right: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  pointer-events: none;
+}
+
+.fly-brand,
+.fly-readout {
+  pointer-events: auto;
+  background: color-mix(in srgb, var(--color-bg) 78%, transparent);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: 0.7rem 0.85rem;
+  backdrop-filter: blur(10px);
+  max-width: 22rem;
+}
+
+.fly-brand strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 560;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.fly-brand span,
+.fly-sub,
+.fly-keys {
+  color: var(--color-muted);
+  font-size: 0.82rem;
+}
+
+.fly-readout {
+  text-align: right;
+}
+
+.fly-temp {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+
+.fly-temp small {
+  font-size: 1rem;
+  margin-left: 0.15rem;
+}
+
+.fly-readout[data-hot="true"] .fly-temp {
+  color: var(--color-heat);
+}
+
+.fly-sub {
+  margin: 0.2rem 0 0;
+}
+
+.fly-caption {
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 13.5rem;
+  max-width: 36rem;
+  background: color-mix(in srgb, var(--color-bg) 82%, transparent);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.fly-caption h2 {
+  margin: 0.15rem 0 0.35rem;
+  font-size: 1.45rem;
+}
+
+.fly-caption p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.fly-alarm,
+.fly-campus {
+  left: 50%;
+  transform: translateX(-50%);
+  top: 6.5rem;
+  margin: 0;
+  padding: 0.45rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--color-bg) 80%, transparent);
+  border: 1px solid var(--color-heat);
+  color: var(--color-fg);
+  white-space: nowrap;
+  max-width: calc(100% - 1.5rem);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fly-campus {
+  top: auto;
+  bottom: auto;
+  border-color: var(--color-water);
+  top: 6.5rem;
+}
+
+.fly-dock {
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-height: 46dvh;
+  overflow: auto;
+}
+
+.fly-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chip[data-on="true"],
+.btn-ghost[data-on="true"] {
+  color: var(--color-amber-ink);
+  background: var(--color-amber);
+  border-color: transparent;
+}
+
+.fly-keys {
+  margin: 0;
+}
+
+.fly-stick {
+  display: none;
+  left: 0.85rem;
+  bottom: 15rem;
+  width: 6.5rem;
+  height: 6.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-line);
+  background: color-mix(in srgb, var(--color-bg) 55%, transparent);
+  touch-action: none;
+}
+
+.fly-stick span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1.6rem;
+  height: 1.6rem;
+  margin: -0.8rem 0 0 -0.8rem;
+  border-radius: 999px;
+  background: var(--color-fg);
+}
+
+.fly-rise {
+  display: none;
+  right: 0.85rem;
+  bottom: 15rem;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.fly-notes {
+  inset: 0;
+  display: grid;
+  place-items: end center;
+  background: color-mix(in srgb, var(--color-bg) 55%, transparent);
+  padding: 1rem;
+  overflow: auto;
+}
+
+.fly-notes-card {
+  width: min(40rem, 100%);
+  background: var(--color-bg-raised);
+  color: var(--color-fg);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  padding: 1.1rem 1.15rem 1.2rem;
+  margin-bottom: 4rem;
+}
+
+.fly-notes-card h2 {
+  margin: 0.2rem 0 0.6rem;
+  font-size: 1.7rem;
+}
+
+.fly-notes-card p {
+  color: var(--color-muted);
+}
+
+@media (max-width: 800px) {
+  .fly-brand span,
+  .fly-keys {
+    display: none;
+  }
+
+  .fly-temp {
+    font-size: 1.8rem;
+  }
+
+  .fly-brand,
+  .fly-readout {
+    padding: 0.55rem 0.65rem;
+  }
+
+  .fly-caption {
+    bottom: auto;
+    top: 5.2rem;
+    max-height: 7.5rem;
+    overflow: auto;
+  }
+
+  .fly-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .fly-dock {
+    max-height: none;
+    gap: 0.35rem;
+  }
+
+  .fly-stick,
+  .fly-rise {
+    display: flex;
+    bottom: 12.75rem;
   }
 }

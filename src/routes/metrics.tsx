@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { coolingLabel, evaluateScenario, SCENARIO_NOTE } from "@/lib/calculations";
 import { formatCompact, formatMw, formatNumber, formatUsd } from "@/lib/format";
@@ -25,6 +25,13 @@ function MetricsPage() {
         Megawatts, water, and a bill that is not a forecast.
       </h1>
       <p className="lede">{SCENARIO_NOTE}</p>
+      <p className="callout">
+        Context, not an input: surveyed PUE for large sites was near 2.5 around 2007 and a little above 1.5 later, with the best fleets near 1.1. Air is generally comfortable near 20–30 kW a rack. A rough airflow minimum is about 120 cubic feet per minute per kilowatt. The{" "}
+        <Link className="text-link" to="/build">
+          power page
+        </Link>{" "}
+        is where those dated public estimates live, in this exhibit’s own words.
+      </p>
       <div className="hero" style={{ width: "100%", minHeight: 0, marginTop: "1rem" }}>
         <form className="panel stack" onSubmit={(event) => event.preventDefault()}>
           <Slider label="IT load" value={scenario.itLoadMw} min={1} max={200} step={1} suffix="MW" onChange={(value) => set({ itLoadMw: value })} />

@@ -12,6 +12,7 @@ const LINKS = [
   { to: "/compare", label: "Compare" },
   { to: "/supply", label: "Supply chain" },
   { to: "/timeline", label: "Timeline" },
+  { to: "/build", label: "Power" },
   { to: "/metrics", label: "Metrics" },
   { to: "/glossary", label: "Glossary" },
   { to: "/methodology", label: "Methodology" },
@@ -79,12 +80,15 @@ export function AppChrome({ children }: { children: ReactNode }) {
     [],
   );
 
+  const immersive = path === "/";
+
   return (
     <>
+      {immersive ? null : (
       <header className="nav">
         <Link to="/" className="brand">
-          <strong>Anatomy of AI</strong>
-          <span>Infrastructure</span>
+          <strong>Cold Aisle</strong>
+          <span>AI training pod</span>
         </Link>
         <nav className="nav-links" aria-label="Primary">
           {LINKS.map((link) => (
@@ -101,6 +105,7 @@ export function AppChrome({ children }: { children: ReactNode }) {
           </span>
         </button>
       </header>
+      )}
       <div id="main">{children}</div>
       {open ? (
         <div className="palette" role="presentation" onMouseDown={() => setOpen(false)}>
